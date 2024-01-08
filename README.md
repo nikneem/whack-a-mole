@@ -35,4 +35,6 @@ After 30 seconds, the game ends and advances to the Game End screen where the wi
 
 Games can be created, activated and started in a central backend system. This system does not have a front-end representation in this project. Games are started in a central system and thus all playes that joined the same game, are playing together at the same time.
 
+The use of vouchers can be turned on and off. When turned off, no vouchers are required to join a game. When vouchers are required, joining a single game requires a valid one-time-use voucher.
+
 \* If vouchers are required, the user can only join a new game when he has a new -valid- voucher available.
