@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--main-background);
+  color: var(--text-color);
+}
+
+.full-width {
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--text-color);
+}

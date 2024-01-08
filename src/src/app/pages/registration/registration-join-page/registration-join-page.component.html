@@ -1,0 +1,39 @@
+<div class="registration-join-page">
+  <mat-card>
+    <wam-loading *ngIf="isLoading"></wam-loading>
+    <div class="registration-join-panel" *ngIf="joinForm && !isLoading">
+      <div class="information">
+        <h1 translate="registration.join.title"></h1>
+        <p translate="registration.join.description"></p>
+      </div>
+      <div class="form">
+        <form [formGroup]="joinForm" novalidate>
+          <div class="actions-row">
+            <mat-form-field class="full-width">
+              <mat-label translate="registration.join.game-code"></mat-label>
+              <input matInput formControlName="gameCode" />
+              <button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="clickScan()"
+              >
+                <mat-icon>qr_code_2</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+      <div class="actions">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="join()"
+          [disabled]="!joinForm.valid"
+        >
+          <span translate="registration.join.join"></span>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>

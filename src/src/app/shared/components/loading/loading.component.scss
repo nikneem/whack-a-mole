@@ -1,0 +1,9 @@
+.loading-panel {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  .loading-indicator {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,45 @@
+<div class="registration-page">
+  <mat-card>
+    <wam-loading *ngIf="isLoading"></wam-loading>
+    <div class="registration-panel" *ngIf="registrationForm && !isLoading">
+      <div class="information">
+        <h1 translate="registration.title"></h1>
+        <p translate="registration.description"></p>
+      </div>
+      <div class="form">
+        <form [formGroup]="registrationForm" novalidate>
+          <div class="actions-row">
+            <mat-form-field class="full-width">
+              <mat-label translate="registration.display-name"></mat-label>
+              <input matInput formControlName="displayName" />
+            </mat-form-field>
+          </div>
+          <div class="actions-row">
+            <mat-form-field class="full-width">
+              <mat-label translate="registration.email-address"></mat-label>
+              <input matInput formControlName="emailAddress" />
+            </mat-form-field>
+          </div>
+          <div class="action-row">
+            <mat-slide-toggle
+              [checked]="acceptedCoc"
+              formControlName="acceptCoc"
+            >
+              <span translate="registration.accept-terms"></span>
+            </mat-slide-toggle>
+          </div>
+        </form>
+      </div>
+      <div class="actions">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="register()"
+          [disabled]="!registrationForm.valid"
+        >
+          <span translate="registration.register"></span>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>

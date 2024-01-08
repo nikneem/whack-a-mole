@@ -1,0 +1,129 @@
+@use "@angular/material" as mat;
+
+$my-custom-level: mat.define-typography-level(
+  $font-family: Montserrat,
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: normal,
+);
+
+$whack-a-mole-typography-config: mat.define-typography-config(
+  $font-family: Montserrat,
+  $headline-1: mat.define-typography-level(112px, 112px, 100),
+  $headline-2:
+    mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $headline-3:
+    mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $headline-4: mat.define-typography-level(34px, 40px, 400),
+  $headline-5: mat.define-typography-level(24px, 32px, 400),
+  $headline-6:
+    mat.define-typography-level(20px, 24px, 500, $letter-spacing: 0.01em),
+  $subtitle-1: mat.define-typography-level(16px, 24px, 400),
+  $subtitle-2:
+    mat.define-typography-level(14px, 20px, 500, $letter-spacing: 0.01em),
+  $body-1: mat.define-typography-level(16px, 24px, 400),
+);
+
+$four-dotnet-blue-palette: (
+  50: #eee8f9,
+  100: #d2c7f0,
+  200: #b4a1e7,
+  300: #967bde,
+  400: #7d5ed6,
+  500: #6442ce,
+  600: #593dc8,
+  700: #4a35be,
+  800: #3b2fb7,
+  900: #1e23aa,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$four-dotnet-pink-palette: (
+  50: #fbe4ed,
+  100: #f6bad2,
+  200: #f18db4,
+  300: #ec5f97,
+  400: #e93a7f,
+  500: #e60a68,
+  600: #d50965,
+  700: #bf095f,
+  800: #aa075b,
+  900: #840452,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$whack-a-mole-primary: mat.define-palette($four-dotnet-blue-palette, 900);
+$whack-a-mole-accent: mat.define-palette($four-dotnet-pink-palette, 500);
+$whack-a-mole-warn: mat.define-palette(mat.$red-palette);
+
+$whack-a-mole-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $whack-a-mole-primary,
+      accent: $whack-a-mole-accent,
+      warn: $whack-a-mole-warn,
+    ),
+    typography: $whack-a-mole-typography-config,
+    density: 0,
+  )
+);
+
+$whack-a-mole-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $whack-a-mole-primary,
+      accent: $whack-a-mole-accent,
+      warn: $whack-a-mole-warn,
+    ),
+    typography: $whack-a-mole-typography-config,
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($whack-a-mole-dark-theme);
+
+:root {
+  --font-family: Montserrat, "Helvetica Neue", sans-serif;
+  --main-background: #333;
+  --text-color: #ddd;
+  --accent-color: #e60a68;
+  --logo-url: url("/assets/images/4dn-logo-white.png");
+}
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+  // Use the `-color` mixins to only apply color styles without reapplying the same
+  // typography and density styles.
+  @include mat.all-component-themes($whack-a-mole-light-theme);
+
+  :root {
+    --font-family: Montserrat, "Helvetica Neue", sans-serif;
+    --main-background: #eee;
+    --text-color: #444;
+    --accent-color: #e60a68;
+    --logo-url: url("/assets/images/4dn-logo-black.png");
+  }
+}

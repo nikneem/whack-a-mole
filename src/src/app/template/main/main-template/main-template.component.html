@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <mat-toolbar-row> 4Dotnet - Whack-a-Mole </mat-toolbar-row>
+  <mat-toolbar-row class="user-exclusion" *ngIf="userLockedOut">
+    <span [translate]="lockoutReason"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="main-page">
+  <router-outlet></router-outlet>
+</div>
+<div class="footer">
+  <div class="fourdotnet-logo"></div>
+  <span>
+    <a href="https://4dotnet.nl" target="_blank">https://4dotnet.nl</a>
+  </span>
+</div>

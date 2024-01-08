@@ -1,0 +1,22 @@
+{
+  "registration": {
+    "title": "Who are you?",
+    "description": "Please enter your name to play. Your email address is optional. Please note we have a code of conduct, so don't be too silly.",
+    "accept-terms": "My information is compliant with the Code of Conduct",
+    "display-name": "Name",
+    "email-address": "Email address",
+    "register": "Register",
+    "join": {
+      "title": "Join a game",
+      "description": "In order to join a game, enter the game code or scan the QR code.",
+      "game-code": "Game code",
+      "join": "Join"
+    }
+  },
+  "users": {
+    "exclusionreasons": {
+      "generalsystemmisuse": "You are locked out in suspect of general system misuse",
+      "codeofconductviolation": "You are locked out, you broke our code of conduct"
+    }
+  }
+}

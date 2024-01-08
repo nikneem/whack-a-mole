@@ -1,0 +1,8 @@
+<div class="mole-hill" (click)="moleClicked()">
+  <div class="mole-hiding-parent">
+    <div class="mole" [@molehillAnimation]="isClickable ? 'up' : 'down'"></div>
+    <div [class]="hillClass"></div>
+    <div [class]="dirtClass"></div>
+  </div>
+</div>
+<span class="score">{{ timeElapsed }}</span>
