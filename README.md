@@ -11,7 +11,6 @@ flowchart LR
     I -- Yes --> K[Play Game]
     I -- No --> J[Show Error]
     J --> E
-    E --> K[Game Stand By]
     K --> F[Play Game]
     F --> G[End Game]
     G --> H[Show Scores]
