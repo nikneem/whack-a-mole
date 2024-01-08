@@ -8,7 +8,7 @@ flowchart LR
     C --> E[Join Game]
     D --> E
     E --> I{Valid Voucher}
-    I -- Yes --> K[Play Game]
+    I -- Yes --> K[Game Lobby]
     I -- No --> J[Show Error]
     J --> E
     K --> F[Play Game]
